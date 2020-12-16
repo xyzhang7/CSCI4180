@@ -290,9 +290,9 @@ public class MyDedup {
 
     /* Delete */
     public static void localDelete(String filename, List<FRIndexItem> frIndex, List<FileRecipeItem> fileRecipe, Statistic stat){
-        int preChunk=0, uniChunk=0, preByte=0, uniByte=0;
+        int preChunk= fileRecipe.size();
+        int uniChunk=0, preByte=0, uniByte=0;
         for(FileRecipeItem item: fileRecipe){
-            preChunk++;
             preByte += item.getSize();
 
             if(item.getIsZero() == (byte) 0){
